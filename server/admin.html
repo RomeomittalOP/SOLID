@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOLID — Enquiries Admin</title>
+  <link rel="icon" href="/assets/favicon.png" type="image/png" />
+  <style>
+    :root{--blue:#005AAA;--blue-dark:#003E78;--navy:#0A1B2E;--ink:#13202F;--muted:#5B6B7B;--line:#E3E9F0;--bg:#F4F8FC}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+    header{background:linear-gradient(120deg,var(--blue-dark),var(--blue));color:#fff;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    header h1{font-size:1.25rem;font-weight:700;display:flex;align-items:center;gap:10px}
+    header .dot{width:10px;height:10px;border-radius:50%;background:#25D366;box-shadow:0 0 0 4px rgba(37,211,102,.25)}
+    .wrap{max-width:1000px;margin:24px auto;padding:0 18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 2px 10px rgba(10,27,46,.05)}
+    .login{max-width:420px;margin:8vh auto}
+    .login h2{font-size:1.2rem;margin-bottom:6px}
+    .login p{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+    label{display:block;font-weight:600;font-size:.85rem;margin-bottom:6px}
+    input[type=password],input[type=text]{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:.95rem}
+    input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,90,170,.1)}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:50px;padding:11px 22px;font-weight:600;cursor:pointer;font-size:.92rem;text-decoration:none}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-primary:hover{background:var(--blue-dark)}
+    .btn-wa{background:#25D366;color:#fff}
+    .btn-sm{padding:7px 14px;font-size:.82rem;border-radius:8px}
+    .btn-light{background:#eef4fb;color:var(--blue)}
+    .btn-danger{background:#fdecec;color:#d33}
+    .toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+    .stats{display:flex;gap:12px;flex-wrap:wrap;margin-left:auto}
+    .pill{background:#fff;border:1px solid var(--line);border-radius:50px;padding:6px 14px;font-size:.85rem;font-weight:600}
+    .pill b{color:var(--blue)}
+    .seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:50px;overflow:hidden}
+    .seg button{border:0;background:none;padding:8px 16px;cursor:pointer;font-size:.85rem;font-weight:600;color:var(--muted)}
+    .seg button.active{background:var(--blue);color:#fff}
+    .enq{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px;background:#fff;transition:.2s}
+    .enq.handled{opacity:.62}
+    .enq .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+    .enq .name{font-weight:700;font-size:1.05rem}
+    .enq .time{color:var(--muted);font-size:.8rem}
+    .enq .meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--blue);font-size:.9rem;margin:6px 0}
+    .enq .meta a{color:var(--blue);text-decoration:none}
+    .enq .tag{background:#eef4fb;color:var(--blue);border-radius:50px;padding:2px 10px;font-size:.78rem;font-weight:600}
+    .enq .msg{background:var(--bg);border-radius:8px;padding:10px 12px;margin:8px 0;white-space:pre-wrap;font-size:.93rem}
+    .enq .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .empty{text-align:center;color:var(--muted);padding:50px 0}
+    .err{background:#fdecec;color:#c0392b;padding:10px 14px;border-radius:8px;font-size:.88rem;margin-top:12px;display:none}
+    .hide{display:none}
+    .logout{color:#fff;background:rgba(255,255,255,.15);border:0;border-radius:50px;padding:8px 16px;cursor:pointer;font-weight:600;font-size:.85rem}
+  </style>
+</head>
+<body>
+
+  <!-- Login -->
+  <div id="loginView">
+    <div class="card login">
+      <h2>SOLID — Enquiries Admin</h2>
+      <p>Enter your admin token to view website enquiries.</p>
+      <label for="token">Admin Token</label>
+      <input id="token" type="password" placeholder="Paste your ADMIN_TOKEN" autocomplete="current-password" />
+      <div style="margin-top:16px"><button class="btn btn-primary" id="loginBtn">Sign In</button></div>
+      <div class="err" id="loginErr"></div>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashView" class="hide">
+    <header>
+      <h1><span class="dot"></span> SOLID — Enquiries</h1>
+      <button class="logout" id="logoutBtn">Sign out</button>
+    </header>
+    <div class="wrap">
+      <div class="toolbar">
+        <div class="seg" id="filterSeg">
+          <button data-f="all" class="active">All</button>
+          <button data-f="false">Pending</button>
+          <button data-f="true">Handled</button>
+        </div>
+        <button class="btn btn-light btn-sm" id="refreshBtn">↻ Refresh</button>
+        <div class="stats" id="stats"></div>
+      </div>
+      <div id="list"></div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (s) => document.querySelector(s);
+    let TOKEN = sessionStorage.getItem("solid_admin_token") || "";
+    let filter = "all";
+
+    function authHeaders() { return { "x-admin-token": TOKEN }; }
+    function esc(s){return String(s??"").replace(/[<>&]/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;"}[c]));}
+    function waUrl(phone){ return "https://wa.me/" + String(phone||"").replace(/\D/g,""); }
+    function fmt(iso){ try{return new Date(iso).toLocaleString();}catch{return iso;} }
+
+    async function login() {
+      TOKEN = $("#token").value.trim();
+      if (!TOKEN) return;
+      const r = await fetch("/api/enquiries", { headers: authHeaders() });
+      if (r.status === 200) {
+        sessionStorage.setItem("solid_admin_token", TOKEN);
+        showDash();
+        load();
+      } else {
+        const e = await r.json().catch(()=>({}));
+        const box = $("#loginErr"); box.style.display="block";
+        box.textContent = e.error || "Invalid token.";
+      }
+    }
+    function logout(){ sessionStorage.removeItem("solid_admin_token"); TOKEN=""; location.reload(); }
+    function showDash(){ $("#loginView").classList.add("hide"); $("#dashView").classList.remove("hide"); }
+
+    async function load() {
+      const q = filter === "all" ? "" : "?handled=" + filter;
+      const r = await fetch("/api/enquiries" + q, { headers: authHeaders() });
+      if (r.status !== 200) return logout();
+      const data = await r.json();
+      $("#stats").innerHTML =
+        `<span class="pill">Total <b>${data.stats.total}</b></span>
+         <span class="pill">Pending <b>${data.stats.pending}</b></span>
+         <span class="pill">Handled <b>${data.stats.handled}</b></span>`;
+      render(data.enquiries);
+    }
+
+    function render(items) {
+      const list = $("#list");
+      if (!items.length) { list.innerHTML = '<div class="empty">No enquiries here yet.</div>'; return; }
+      list.innerHTML = items.map((e) => `
+        <div class="enq ${e.handled ? "handled" : ""}">
+          <div class="top">
+            <div class="name">${esc(e.name)} ${e.product ? `<span class="tag">${esc(e.product)}</span>` : ""}</div>
+            <div class="time">${fmt(e.createdAt)}</div>
+          </div>
+          <div class="meta">
+            ${e.phone ? `<a href="tel:${esc(e.phone)}">📞 ${esc(e.phone)}</a>` : ""}
+            ${e.email ? `<a href="mailto:${esc(e.email)}">✉ ${esc(e.email)}</a>` : ""}
+          </div>
+          <div class="msg">${esc(e.message)}</div>
+          <div class="actions">
+            ${e.phone ? `<a class="btn btn-wa btn-sm" target="_blank" rel="noopener" href="${waUrl(e.phone)}">Reply on WhatsApp</a>` : ""}
+            <button class="btn btn-light btn-sm" data-toggle="${e.id}" data-handled="${e.handled}">${e.handled ? "Mark pending" : "Mark handled"}</button>
+            <button class="btn btn-danger btn-sm" data-del="${e.id}">Delete</button>
+          </div>
+        </div>`).join("");
+    }
+
+    document.addEventListener("click", async (ev) => {
+      const t = ev.target;
+      if (t.id === "loginBtn") return login();
+      if (t.id === "logoutBtn") return logout();
+      if (t.id === "refreshBtn") return load();
+      if (t.dataset.f) { filter = t.dataset.f; document.querySelectorAll("#filterSeg button").forEach(b=>b.classList.toggle("active", b===t)); return load(); }
+      if (t.dataset.toggle) {
+        await fetch("/api/enquiries/" + t.dataset.toggle, { method: "PATCH", headers: { ...authHeaders(), "Content-Type": "application/json" }, body: JSON.stringify({ handled: t.dataset.handled !== "true" }) });
+        return load();
+      }
+      if (t.dataset.del) {
+        if (!confirm("Delete this enquiry permanently?")) return;
+        await fetch("/api/enquiries/" + t.dataset.del, { method: "DELETE", headers: authHeaders() });
+        return load();
+      }
+    });
+    $("#token").addEventListener("keydown", (e) => { if (e.key === "Enter") login(); });
+
+    // Auto-login if token already in this session
+    if (TOKEN) { showDash(); load(); }
+  </script>
+</body>
+</html>
