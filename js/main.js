@@ -27,28 +27,36 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ---- Sticky header shadow ---- */
-  const header = document.querySelector(".header");
+  const header = document.querySelector(".site-header, .header");
   if (header) {
     const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  /* ---- Mobile nav ---- */
+  /* ---- Mobile nav (with Products dropdown accordion) ---- */
   const burger = document.querySelector(".hamburger");
   const links = document.querySelector(".nav-links");
+  const isMobile = () => window.matchMedia("(max-width:760px)").matches;
   if (burger && links) {
     burger.addEventListener("click", () => {
       const open = links.classList.toggle("open");
       burger.classList.toggle("open", open);
       burger.setAttribute("aria-expanded", open);
     });
-    links.querySelectorAll("a").forEach(a =>
-      a.addEventListener("click", () => {
+    links.querySelectorAll("a").forEach(a => {
+      const parentLi = a.parentElement;
+      const isDropParent = parentLi && parentLi.classList.contains("has-drop");
+      a.addEventListener("click", (e) => {
+        if (isDropParent && isMobile()) {
+          e.preventDefault();                 // tap toggles the submenu on mobile
+          parentLi.classList.toggle("open-sub");
+          return;
+        }
         links.classList.remove("open");
         burger.classList.remove("open");
-      })
-    );
+      });
+    });
   }
 
   /* ---- Scroll reveal ---- */
@@ -98,6 +106,12 @@ document.addEventListener("DOMContentLoaded", () => {
         c.classList.toggle("hide", !show);
       });
     }));
+    // Pre-select a filter from the URL hash (e.g. products.html#downlights)
+    const hash = (location.hash || "").replace("#", "");
+    if (hash) {
+      const target = [...filters].find(f => f.getAttribute("data-filter") === hash);
+      if (target) target.click();
+    }
   }
 
   /* ---- Lightbox (catalog page view) ---- */
@@ -112,6 +126,60 @@ document.addEventListener("DOMContentLoaded", () => {
     lb.addEventListener("click", (e) => { if (e.target === lb || e.target.classList.contains("lb-close")) close(); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
   }
+
+  /* ---- Product selection (wattage / colour temp / variant) -> WhatsApp ---- */
+  const COLOUR_TEMPS = ["Warm White", "Cool White", "Natural White"];
+  document.querySelectorAll(".prod-card").forEach((card) => {
+    const optWrap = card.querySelector(".prod-options");
+    const btn = card.querySelector(".prod-enquire");
+    if (!optWrap || !btn) return;
+
+    const name = (card.querySelector("h3")?.textContent || "Product").trim();
+    const model = card.getAttribute("data-model") || "";
+    const split = (a) => (a ? a.split(",").map((s) => s.trim()).filter(Boolean) : []);
+
+    const groups = [];
+    const watt = split(card.getAttribute("data-watt"));
+    if (watt.length) groups.push({ key: "Wattage", label: "Wattage", options: watt });
+    if (!card.hasAttribute("data-notemp")) groups.push({ key: "Colour", label: "Colour Temperature", options: COLOUR_TEMPS });
+    const variant = split(card.getAttribute("data-variant"));
+    if (variant.length) groups.push({ key: "Variant", label: "Variant / Finish", options: variant });
+    const length = split(card.getAttribute("data-length"));
+    if (length.length) groups.push({ key: "Length", label: "Length", options: length });
+    if (!groups.length) return;
+
+    const selection = {};
+    const escAttr = (s) => String(s).replace(/"/g, "&quot;");
+    optWrap.innerHTML = groups
+      .map((g) => `
+      <div class="opt-group">
+        <span class="opt-label">${g.label}</span>
+        <div class="opt-chips">
+          ${g.options.map((o) => `<button type="button" class="opt-chip" data-key="${g.key}" data-val="${escAttr(o)}">${o}</button>`).join("")}
+        </div>
+      </div>`)
+      .join("");
+
+    const refresh = () => { btn.disabled = !groups.every((g) => selection[g.key]); };
+    refresh();
+
+    optWrap.addEventListener("click", (e) => {
+      const chip = e.target.closest(".opt-chip");
+      if (!chip) return;
+      selection[chip.getAttribute("data-key")] = chip.getAttribute("data-val");
+      chip.parentElement.querySelectorAll(".opt-chip").forEach((c) => c.classList.toggle("sel", c === chip));
+      refresh();
+    });
+
+    btn.addEventListener("click", () => {
+      if (btn.disabled) return;
+      const lines = ["Hi, I am interested in the following product:", "", `Product: ${name}`];
+      if (model) lines.push(`Model: ${model}`);
+      ["Wattage", "Colour", "Variant", "Length"].forEach((k) => { if (selection[k]) lines.push(`${k}: ${selection[k]}`); });
+      lines.push("", "Please share more details.");
+      window.open(waLink(lines.join("\n")), "_blank", "noopener");
+    });
+  });
 
   /* ---- Contact form -> WhatsApp ---- */
   const form = document.querySelector("#contactForm");

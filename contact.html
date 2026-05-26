@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — SOLID LED Lighting | WhatsApp, Call & Enquiry</title>
-  <meta name="description" content="Contact SOLID (Solid State Lights), Bhilwadi. Message us on WhatsApp, call +91 98601 16122 or send an enquiry for LED downlights, panels and more." />
+  <title>Contact Us — SOLID LED Lighting | WhatsApp, Call & Enquiry</title>
+  <meta name="description" content="Contact Solid State Lights, Bhilwadi. Message on WhatsApp, call 9860116122 or email info@solidstate.co.in for LED indoor lighting products." />
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,30 +12,55 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- ===== Top bar ===== -->
+  <div class="topbar">
+    <div class="container wrap">
+      <div class="tb-left">
+        <a href="mailto:info@solidstate.co.in"><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L4 6v1l8 5 8-5V6l-8 5z"/></svg> info@solidstate.co.in</a>
+        <a href="tel:+919860116122"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z"/></svg> 9860116122</a>
+      </div>
+      <div class="tb-right">
+        <span>Follow Us :</span>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.8 3.8 0 01-1.4-.9 3.8 3.8 0 01-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1018.6 12 6.6 6.6 0 0012 5.4zm0 10.9A4.3 4.3 0 1116.3 12 4.3 4.3 0 0112 16.3zm6.8-11.1a1.5 1.5 0 11-1.5-1.5 1.5 1.5 0 011.5 1.5z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.94 7.5a1.94 1.94 0 11-.02-3.88A1.94 1.94 0 016.94 7.5zM5.25 9h3.4v10.5h-3.4zm5.55 0h3.26v1.43h.05c.45-.86 1.56-1.77 3.2-1.77 3.42 0 4.05 2.25 4.05 5.18v5.66h-3.4v-5c0-1.2 0-2.73-1.67-2.73s-1.92 1.3-1.92 2.64v5.09h-3.4z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <header class="header">
+  <!-- ===== Header ===== -->
+  <header class="site-header">
     <div class="container nav">
       <a href="index.html" class="brand" aria-label="SOLID Lighting Home"><img src="assets/logo.png" alt="SOLID — Lighting Everything" /></a>
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="active">Contact</a>
-        <a class="btn btn-wa" data-wa="Hi SOLID, I'd like to know more about your LED lighting products.">Chat on WhatsApp</a>
-      </nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="has-drop">
+          <a href="products.html">Products <svg class="caret" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></a>
+          <div class="dropdown">
+            <a href="products.html#downlights"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3"/></svg> COB Downlights</a>
+            <a href="products.html#panels"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/></svg> LED Panel Lights</a>
+            <a href="products.html#track"><svg viewBox="0 0 24 24"><path d="M4 4h16v2H4zm6 4h4l3 12h-3l-.5-2h-3l-.5 2H7z"/></svg> LED Track Lights</a>
+            <a href="products.html#track"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2"/></svg> LED Surface Lights</a>
+            <a href="products.html"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg> Other Indoor Lights</a>
+          </div>
+        </li>
+        <li><a href="assets/SOLID-LED-Catalogue.pdf" download>Downloads</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
+      </ul>
       <div class="nav-cta">
-        <a class="btn btn-wa" data-wa="Hi SOLID, I'd like to know more about your LED lighting products.">
-          <svg viewBox="0 0 24 24"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1112 24a11.9 11.9 0 01-5.7-1.46L.06 24zM6.6 20.1l.37.22a9.9 9.9 0 005 1.37 9.9 9.9 0 10-9.9-9.9c0 1.8.48 3.5 1.4 5l.24.38-1 3.65 3.9-1.02z"/></svg>
-          WhatsApp
+        <a class="btn btn-primary" data-wa="Hi SOLID, I'd like to enquire about your LED indoor lighting products.">Enquire Now
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <button class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
-
   <section class="banner">
     <div class="container">
-      <div class="crumbs"><a href="index.html">Home</a> / Contact</div>
+      <div class="crumbs"><a href="index.html">Home</a> / Contact Us</div>
       <h1>Get in Touch</h1>
       <p>Questions, quotes or bulk orders — reach us the easy way. The fastest reply is on WhatsApp.</p>
     </div>
@@ -43,27 +68,25 @@
 
   <section class="section">
     <div class="container contact-grid">
-
-      <!-- Info -->
       <div class="reveal">
         <span class="kicker">Contact Details</span>
         <h2 style="font-size:1.9rem;margin-bottom:24px">We'd love to hear from you</h2>
         <div class="info-cards">
           <div class="info-card wa">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1112 24a11.9 11.9 0 01-5.7-1.46L.06 24zM6.6 20.1l.37.22a9.9 9.9 0 005 1.37 9.9 9.9 0 10-9.9-9.9c0 1.8.48 3.5 1.4 5l.24.38-1 3.65 3.9-1.02z"/></svg></div>
-            <div><h4>WhatsApp (Fastest)</h4><a data-wa="Hi SOLID, I'd like to enquire about your LED lighting products.">+91 98601 16122 — Chat now</a></div>
+            <div><h4>WhatsApp (Fastest)</h4><a data-wa="Hi SOLID, I'd like to enquire about your LED indoor lighting products.">9860116122 — Chat now</a></div>
           </div>
           <div class="info-card">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z"/></svg></div>
-            <div><h4>Call Us</h4><a href="tel:+919860116122">+91 98601 16122</a></div>
+            <div><h4>Call Us</h4><a href="tel:+919860116122">9860116122</a></div>
           </div>
           <div class="info-card">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L4 6v1l8 5 8-5V6l-8 5z"/></svg></div>
-            <div><h4>Email</h4><a href="mailto:solidstateindia@gmail.com">solidstateindia@gmail.com</a></div>
+            <div><h4>Email</h4><a href="mailto:info@solidstate.co.in">info@solidstate.co.in</a></div>
           </div>
           <div class="info-card">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg></div>
-            <div><h4>Address</h4><p>Solid State Lights, Bhilwadi – 416 303,<br/>Maharashtra, India</p></div>
+            <div><h4>Address</h4><p>Solid State Lights, 627, Bhilwadi – 416303,<br/>Maharashtra, India</p></div>
           </div>
           <div class="info-card">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 11h-5v-2h3V6h2v7z"/></svg></div>
@@ -72,11 +95,10 @@
         </div>
       </div>
 
-      <!-- Form -->
       <div class="reveal">
         <div class="form-card">
           <h3>Send an Enquiry</h3>
-          <p class="sub">Fill this in and we'll open WhatsApp with your message ready to send — no sign-up, no API needed.</p>
+          <p class="sub">Fill this in and we'll open WhatsApp with your message ready to send — no sign-up needed.</p>
           <form id="contactForm">
             <div class="form-row">
               <div class="field"><label for="name">Your Name *</label><input id="name" name="name" type="text" placeholder="e.g. Rahul Sharma" required /></div>
@@ -87,12 +109,11 @@
               <select id="product" name="product">
                 <option value="">Select a category (optional)</option>
                 <option>COB Downlights</option>
-                <option>LED Panels (Slim / Surface)</option>
-                <option>Double Color Panels</option>
-                <option>Spot & Mini COB Lights</option>
-                <option>Track & Surface Lights</option>
+                <option>LED Panel Lights</option>
+                <option>LED Track Lights</option>
+                <option>LED Surface Lights</option>
+                <option>Other Indoor Lights</option>
                 <option>Bulk / Project Order</option>
-                <option>Other</option>
               </select>
             </div>
             <div class="field"><label for="message">Message *</label><textarea id="message" name="message" placeholder="Tell us what you need — quantity, wattage, finish, location…" required></textarea></div>
@@ -100,13 +121,12 @@
               <svg viewBox="0 0 24 24"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1112 24a11.9 11.9 0 01-5.7-1.46L.06 24zM6.6 20.1l.37.22a9.9 9.9 0 005 1.37 9.9 9.9 0 10-9.9-9.9c0 1.8.48 3.5 1.4 5l.24.38-1 3.65 3.9-1.02z"/></svg>
               Send on WhatsApp
             </button>
-            <p class="form-note">By sending, WhatsApp will open with your enquiry pre-filled. You can review it before sending.</p>
+            <p class="form-note">WhatsApp will open with your enquiry pre-filled. You can review it before sending.</p>
           </form>
         </div>
       </div>
     </div>
 
-    <!-- Map -->
     <div class="container">
       <div class="map-wrap reveal">
         <iframe title="SOLID — Bhilwadi location" src="https://www.google.com/maps?q=Bhilwadi%2C%20Maharashtra%20416303&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -114,39 +134,56 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/logo-white.png" alt="SOLID" />
-          <p>Solid State Lights — complete LED lighting solutions, proudly made in India. Lighting Everything, beautifully.</p>
+          <img src="assets/logo.png" alt="SOLID" />
+          <p>Delivering premium LED indoor lighting solutions since 2004. Quality, innovation and customer satisfaction are at the heart of everything we do.</p>
           <div class="social">
-            <a data-wa="Hi SOLID!" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1112 24a11.9 11.9 0 01-5.7-1.46L.06 24zM6.6 20.1l.37.22a9.9 9.9 0 005 1.37 9.9 9.9 0 10-9.9-9.9c0 1.8.48 3.5 1.4 5l.24.38-1 3.65 3.9-1.02z"/></svg></a>
-            <a href="mailto:solidstateindia@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L4 6v1l8 5 8-5V6l-8 5z"/></svg></a>
-            <a href="tel:+919860116122" aria-label="Call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.8 3.8 0 01-1.4-.9 3.8 3.8 0 01-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1018.6 12 6.6 6.6 0 0012 5.4zm0 10.9A4.3 4.3 0 1116.3 12 4.3 4.3 0 0112 16.3zm6.8-11.1a1.5 1.5 0 11-1.5-1.5 1.5 1.5 0 011.5 1.5z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.94 7.5a1.94 1.94 0 11-.02-3.88A1.94 1.94 0 016.94 7.5zM5.25 9h3.4v10.5h-3.4zm5.55 0h3.26v1.43h.05c.45-.86 1.56-1.77 3.2-1.77 3.42 0 4.05 2.25 4.05 5.18v5.66h-3.4v-5c0-1.2 0-2.73-1.67-2.73s-1.92 1.3-1.92 2.64v5.09h-3.4z"/></svg></a>
           </div>
         </div>
-        <div><h4>Quick Links</h4><ul class="footer-links">
-          <li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div><h4>Products</h4><ul class="footer-links">
-          <li><a href="products.html#downlights">COB Downlights</a></li><li><a href="products.html#panels">LED Panels</a></li>
-          <li><a href="products.html#cob">Spot & Mini COB</a></li><li><a href="products.html#track">Track & Surface</a></li></ul></div>
-        <div><h4>Get in Touch</h4><ul class="foot-contact">
-          <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg> Bhilwadi – 416 303, Maharashtra, India</li>
-          <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z"/></svg> <a href="tel:+919860116122">+91 98601 16122</a></li>
-          <li><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L4 6v1l8 5 8-5V6l-8 5z"/></svg> <a href="mailto:solidstateindia@gmail.com">solidstateindia@gmail.com</a></li>
-        </ul></div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="assets/SOLID-LED-Catalogue.pdf" download>Downloads</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Our Products</h4>
+          <ul class="footer-links">
+            <li><a href="products.html#downlights">COB Downlights</a></li>
+            <li><a href="products.html#panels">LED Panel Lights</a></li>
+            <li><a href="products.html#track">LED Track Lights</a></li>
+            <li><a href="products.html#track">LED Surface Lights</a></li>
+            <li><a href="products.html">Other Indoor Lights</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <ul class="foot-contact">
+            <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg> 627, Bhilwadi – 416303, Maharashtra, India</li>
+            <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z"/></svg> <a href="tel:+919860116122">9860116122</a></li>
+            <li><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L4 6v1l8 5 8-5V6l-8 5z"/></svg> <a href="mailto:info@solidstate.co.in">info@solidstate.co.in</a></li>
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
-        <span>© <span data-year>2025</span> SOLID — Solid State Lights. All rights reserved.</span>
-        <span>Lighting Everything · Made in India 🇮🇳</span>
+        <span>© <span data-year>2024</span> Solid State Lights. All Rights Reserved.</span>
+        <span class="fb-links"><a href="#">Privacy Policy</a> | <a href="#">Terms &amp; Conditions</a></span>
       </div>
     </div>
   </footer>
 
-  <a class="wa-float" data-wa="Hi SOLID, I'm interested in your LED lighting products." aria-label="Chat on WhatsApp">
+  <a class="wa-float" data-wa="Hi SOLID, I'm interested in your LED indoor lighting products." aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1112 24a11.9 11.9 0 01-5.7-1.46L.06 24zM6.6 20.1l.37.22a9.9 9.9 0 005 1.37 9.9 9.9 0 10-9.9-9.9c0 1.8.48 3.5 1.4 5l.24.38-1 3.65 3.9-1.02z"/><path d="M9.1 7.2c-.2-.46-.4-.47-.6-.48h-.5a1 1 0 00-.72.34A3 3 0 006.3 9.4c0 1.3.95 2.57 1.08 2.75.13.18 1.84 2.95 4.56 4 .64.27 1.13.43 1.52.55.64.2 1.22.17 1.68.1.5-.07 1.58-.64 1.8-1.27.23-.62.23-1.16.16-1.27-.07-.1-.25-.17-.53-.3-.27-.14-1.58-.78-1.83-.87-.24-.09-.42-.13-.6.13-.18.27-.68.87-.83 1.05-.16.18-.3.2-.57.07-.27-.14-1.13-.42-2.16-1.33-.8-.71-1.34-1.6-1.5-1.86-.13-.27-.01-.42.12-.55.12-.12.27-.31.4-.47.14-.15.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.13-.6-1.48-.83-2.02z"/></svg>
   </a>
 

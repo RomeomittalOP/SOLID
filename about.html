@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — SOLID | Solid State Lights, LED Manufacturer in India</title>
-  <meta name="description" content="About SOLID (Solid State Lights), Bhilwadi — a Made-in-India LED lighting manufacturer delivering energy-efficient COB downlights, panels and architectural fixtures." />
+  <title>About Us — SOLID | LED Indoor Lighting Manufacturer in India Since 2004</title>
+  <meta name="description" content="About Solid State Lights (SOLID) — a leading LED indoor lighting manufacturer in India since 2004, delivering energy-efficient COB downlights, panels, track and architectural lighting." />
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,73 +12,120 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- ===== Top bar ===== -->
+  <div class="topbar">
+    <div class="container wrap">
+      <div class="tb-left">
+        <a href="mailto:info@solidstate.co.in"><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L4 6v1l8 5 8-5V6l-8 5z"/></svg> info@solidstate.co.in</a>
+        <a href="tel:+919860116122"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z"/></svg> 9860116122</a>
+      </div>
+      <div class="tb-right">
+        <span>Follow Us :</span>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.8 3.8 0 01-1.4-.9 3.8 3.8 0 01-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1018.6 12 6.6 6.6 0 0012 5.4zm0 10.9A4.3 4.3 0 1116.3 12 4.3 4.3 0 0112 16.3zm6.8-11.1a1.5 1.5 0 11-1.5-1.5 1.5 1.5 0 011.5 1.5z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.94 7.5a1.94 1.94 0 11-.02-3.88A1.94 1.94 0 016.94 7.5zM5.25 9h3.4v10.5h-3.4zm5.55 0h3.26v1.43h.05c.45-.86 1.56-1.77 3.2-1.77 3.42 0 4.05 2.25 4.05 5.18v5.66h-3.4v-5c0-1.2 0-2.73-1.67-2.73s-1.92 1.3-1.92 2.64v5.09h-3.4z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <header class="header">
+  <!-- ===== Header ===== -->
+  <header class="site-header">
     <div class="container nav">
       <a href="index.html" class="brand" aria-label="SOLID Lighting Home"><img src="assets/logo.png" alt="SOLID — Lighting Everything" /></a>
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="about.html" class="active">About</a>
-        <a href="contact.html">Contact</a>
-        <a class="btn btn-wa" data-wa="Hi SOLID, I'd like to know more about your LED lighting products.">Chat on WhatsApp</a>
-      </nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li class="has-drop">
+          <a href="products.html">Products <svg class="caret" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></a>
+          <div class="dropdown">
+            <a href="products.html#downlights"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3"/></svg> COB Downlights</a>
+            <a href="products.html#panels"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/></svg> LED Panel Lights</a>
+            <a href="products.html#track"><svg viewBox="0 0 24 24"><path d="M4 4h16v2H4zm6 4h4l3 12h-3l-.5-2h-3l-.5 2H7z"/></svg> LED Track Lights</a>
+            <a href="products.html#track"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2"/></svg> LED Surface Lights</a>
+            <a href="products.html"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg> Other Indoor Lights</a>
+          </div>
+        </li>
+        <li><a href="assets/SOLID-LED-Catalogue.pdf" download>Downloads</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
       <div class="nav-cta">
-        <a class="btn btn-wa" data-wa="Hi SOLID, I'd like to know more about your LED lighting products.">
-          <svg viewBox="0 0 24 24"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1112 24a11.9 11.9 0 01-5.7-1.46L.06 24zM6.6 20.1l.37.22a9.9 9.9 0 005 1.37 9.9 9.9 0 10-9.9-9.9c0 1.8.48 3.5 1.4 5l.24.38-1 3.65 3.9-1.02z"/></svg>
-          WhatsApp
+        <a class="btn btn-primary" data-wa="Hi SOLID, I'd like to enquire about your LED indoor lighting products.">Enquire Now
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <button class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
-
+  <!-- Banner -->
   <section class="banner">
     <div class="container">
-      <div class="crumbs"><a href="index.html">Home</a> / About</div>
+      <div class="crumbs"><a href="index.html">Home</a> / About Us</div>
       <h1>About SOLID</h1>
-      <p>Solid State Lights — engineering reliable, energy-efficient LED lighting in India, one fixture at a time.</p>
+      <p>Leaders in LED indoor lighting solutions since 2004 — innovative, energy-efficient and built to last.</p>
     </div>
   </section>
 
-  <!-- Story -->
+  <!-- Intro -->
   <section class="section">
-    <div class="container about-grid">
+    <div class="container about-page-grid">
       <div class="imgwrap reveal">
-        <img src="assets/products/prod-01.jpg" alt="SOLID LED Downlight" style="background:linear-gradient(160deg,#f5faff,#e7f1fb);padding:30px"/>
-        <div class="badge-india"><span class="flag">🇮🇳</span><div><b>Made in India</b><span>Manufactured locally</span></div></div>
+        <div class="main-img"><img src="assets/products/prod-01.jpg" alt="SOLID LED indoor lighting" /></div>
+        <div class="badge-india"><span class="flag">🇮🇳</span><div><b>Since 2004</b><span>20+ years of expertise</span></div></div>
       </div>
       <div class="reveal">
-        <span class="kicker">Who We Are</span>
-        <h2>Lighting Everything, the SOLID way.</h2>
-        <p class="lead-p">SOLID is the lighting brand of <strong>Solid State Lights</strong>, based in Bhilwadi, Maharashtra. We design and manufacture a complete range of LED fixtures — from recessed COB downlights and slim LED panels to track, spot and surface lights — built around our promise of <em>“Lighting Everything.”</em></p>
-        <p class="lead-p">Every product is engineered with strong die-cast metal bodies, premium COB &amp; SMD chips and anti-glare optics, so it performs beautifully and lasts for years. We supply homes, offices, showrooms, hotels and architectural projects across the country.</p>
-        <ul class="check-list">
-          <li><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg> 120+ models across downlights, panels, track &amp; spot lights</li>
-          <li><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg> Strong metal structures with efficient heat dissipation</li>
-          <li><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg> Quality-tested batches with a 2-year warranty</li>
-        </ul>
+        <span class="kicker">About Us</span>
+        <h2 style="font-size:clamp(1.7rem,3.3vw,2.4rem)">Leaders in LED Indoor Lighting <span style="color:var(--blue)">Solutions</span> Since 2004.</h2>
+        <p class="lead-p">Established in 2004, Solid State Lights is a leading LED indoor lighting manufacturer and supplier in India, specializing in innovative, energy-efficient, and cost-effective lighting solutions for modern residential, commercial, retail, hospitality, office, and industrial spaces.</p>
+        <p class="lead-p">With vast experience in the LED lighting industry, we have built a strong reputation for delivering durable, high-performance, and aesthetically designed indoor lighting products that meet evolving architectural and interior lighting trends. Our focus is to provide premium-quality LED lighting solutions that combine modern design, low power consumption, high lumen efficiency, long operational life, and reliable performance.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Product range -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="head center reveal"><span class="kicker">Product Range</span><h2>Our LED Indoor Lighting Products</h2><div class="underline"></div></div>
+      <ul class="cap-grid reveal" style="max-width:760px;margin:0 auto">
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg> LED Indoor Lighting</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg> COB Downlights</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg> LED Panel Lights</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg> LED Track Lights</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg> LED Surface Lights</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg> Recessed LED Lights</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg> Architectural LED Lighting</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg> Commercial LED Lighting</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg> Decorative Indoor Lighting</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg> Office & Retail Lighting Solutions</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Prose -->
+  <section class="section">
+    <div class="container prose reveal">
+      <p>At Solid State Lights, we continuously innovate to deliver modern indoor illumination systems engineered with advanced LED technology and quality components. Our lighting solutions are designed to offer superior brightness, anti-glare performance, energy savings, minimal maintenance, and elegant visual appeal for every environment.</p>
+      <p>Over the years, we have successfully served architects, interior designers, builders, contractors, consultants, retailers, industries, and government projects across India, with a strong presence in India. Our commitment to quality, customer satisfaction, competitive pricing, and dependable service has helped us earn long-term trust in the LED lighting market.</p>
+      <p>As a trusted LED lighting company in India, we aim to create intelligent and future-ready indoor lighting solutions that enhance spaces with efficiency, comfort, and sophisticated design aesthetics.</p>
+      <p>Driven by innovation, quality, and excellence, Solid State Lights continues to illuminate modern interiors with reliable and advanced LED indoor lighting solutions.</p>
     </div>
   </section>
 
   <!-- Mission / Vision -->
   <section class="section section--soft">
     <div class="container">
-      <div class="head center reveal">
-        <span class="kicker">Our Purpose</span>
-        <h2>What Drives Us</h2>
-      </div>
+      <div class="head center reveal"><span class="kicker">Our Purpose</span><h2>What Drives Us</h2><div class="underline"></div></div>
       <div class="mv-grid">
         <div class="mv-card reveal">
           <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 15a5 5 0 110-10 5 5 0 010 10zm0-3a2 2 0 100-4 2 2 0 000 4z"/></svg></div>
           <h3>Our Mission</h3>
-          <p>To make premium, energy-efficient LED lighting accessible across India — combining great design, dependable quality and honest pricing in every fixture we build.</p>
+          <p>To deliver premium, energy-efficient LED indoor lighting across India — combining modern design, dependable quality and honest pricing in every product we build.</p>
         </div>
         <div class="mv-card reveal">
           <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.7 7.6 1 12c1.7 4.4 6 7.5 11 7.5S21.3 16.4 23 12c-1.7-4.4-6-7.5-11-7.5zm0 12.5a5 5 0 110-10 5 5 0 010 10zm0-2a3 3 0 100-6 3 3 0 000 6z"/></svg></div>
           <h3>Our Vision</h3>
-          <p>To be a trusted name in Indian lighting — truly “Lighting Everything,” from a cozy home corner to large architectural spaces, with products that people are proud to install.</p>
+          <p>To be a trusted, future-ready LED lighting company — illuminating modern interiors with intelligent, efficient and sophisticated lighting solutions.</p>
         </div>
       </div>
     </div>
@@ -87,71 +134,80 @@
   <!-- Strengths -->
   <section class="section">
     <div class="container">
-      <div class="head center reveal">
-        <span class="kicker">Our Strengths</span>
-        <h2>Why Customers Choose SOLID</h2>
-      </div>
+      <div class="head center reveal"><span class="kicker">Our Strengths</span><h2>Why Customers Choose SOLID</h2><div class="underline"></div></div>
       <div class="feat-grid">
-        <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div><h3>Energy Saving</h3><p>Lower wattage, higher lumens — cut power bills without compromising brightness.</p></div>
-        <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 1l9 4v6c0 5-3.8 9.7-9 11-5.2-1.3-9-6-9-11V5l9-4z"/></svg></div><h3>Durable Build</h3><p>Die-cast aluminium and quality components engineered for a long service life.</p></div>
-        <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3h18v4H3V3zm2 6h14v12H5V9zm4 3v6h2v-6H9zm4 0v6h2v-6h-2z"/></svg></div><h3>Complete Range</h3><p>One partner for downlights, panels, spot, track &amp; surface lighting needs.</p></div>
-        <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z"/></svg></div><h3>Easy on WhatsApp</h3><p>Quick enquiries, quotes and catalog sharing — talk to us directly on WhatsApp.</p></div>
-        <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1-6.3-4.6L5.7 21l2.3-7.1-6-4.5h7.6z"/></svg></div><h3>Made in India</h3><p>Locally manufactured with pride and strict in-house quality control.</p></div>
-        <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg></div><h3>Trusted Support</h3><p>Responsive service and a 2-year warranty give you complete peace of mind.</p></div>
+        <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div><h3>Energy Saving</h3><p>High-lumen COB &amp; SMD chips cut power use while delivering bright, even light.</p></div>
+        <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 1l9 4v6c0 5-3.8 9.7-9 11-5.2-1.3-9-6-9-11V5z"/></svg></div><h3>Durable Build</h3><p>Strong metal bodies and quality components engineered for long service life.</p></div>
+        <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3h18v4H3V3zm2 6h14v12H5V9z"/></svg></div><h3>Complete Range</h3><p>Downlights, panels, track, surface &amp; architectural lighting from one source.</p></div>
+        <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-4-4 1.4-1.4L11 14.2l5.6-5.6L18 10z"/></svg></div><h3>Anti-Glare Optics</h3><p>Comfortable, focused illumination with superior anti-glare performance.</p></div>
+        <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.9 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg></div><h3>Trusted Across India</h3><p>Serving architects, builders, retailers, industries and government projects.</p></div>
+        <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z"/></svg></div><h3>Dependable Service</h3><p>Competitive pricing and responsive after-sales support you can rely on.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section section--soft">
-    <div class="container">
-      <div class="cta reveal">
-        <h2>Let's Light Up Your Space</h2>
-        <p>Browse the range or message us on WhatsApp — we'll help you choose the perfect fixtures for your project.</p>
-        <div class="cta-actions">
-          <a href="products.html" class="btn btn-primary">View Products</a>
-          <a class="btn btn-wa" data-wa="Hi SOLID, I read your About page and would like to discuss a project.">
-            <svg viewBox="0 0 24 24"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1112 24a11.9 11.9 0 01-5.7-1.46L.06 24zM6.6 20.1l.37.22a9.9 9.9 0 005 1.37 9.9 9.9 0 10-9.9-9.9c0 1.8.48 3.5 1.4 5l.24.38-1 3.65 3.9-1.02z"/></svg>
-            Talk to Us
-          </a>
-        </div>
+  <!-- Project CTA -->
+  <div class="container project-cta reveal" style="margin-top:0;margin-bottom:60px">
+    <div class="project-card">
+      <div class="pc-left">
+        <div class="pc-ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z"/></svg></div>
+        <div><h3>Have a Project in Mind?</h3><p>Get in touch with our lighting experts for the best solution.</p></div>
       </div>
+      <a class="btn btn-primary" data-wa="Hi SOLID, I read your About page and would like a quote.">Get a Quote
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
-  </section>
+  </div>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/logo-white.png" alt="SOLID" />
-          <p>Solid State Lights — complete LED lighting solutions, proudly made in India. Lighting Everything, beautifully.</p>
+          <img src="assets/logo.png" alt="SOLID" />
+          <p>Delivering premium LED indoor lighting solutions since 2004. Quality, innovation and customer satisfaction are at the heart of everything we do.</p>
           <div class="social">
-            <a data-wa="Hi SOLID!" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1112 24a11.9 11.9 0 01-5.7-1.46L.06 24zM6.6 20.1l.37.22a9.9 9.9 0 005 1.37 9.9 9.9 0 10-9.9-9.9c0 1.8.48 3.5 1.4 5l.24.38-1 3.65 3.9-1.02z"/></svg></a>
-            <a href="mailto:solidstateindia@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L4 6v1l8 5 8-5V6l-8 5z"/></svg></a>
-            <a href="tel:+919860116122" aria-label="Call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.8 3.8 0 01-1.4-.9 3.8 3.8 0 01-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1018.6 12 6.6 6.6 0 0012 5.4zm0 10.9A4.3 4.3 0 1116.3 12 4.3 4.3 0 0112 16.3zm6.8-11.1a1.5 1.5 0 11-1.5-1.5 1.5 1.5 0 011.5 1.5z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.94 7.5a1.94 1.94 0 11-.02-3.88A1.94 1.94 0 016.94 7.5zM5.25 9h3.4v10.5h-3.4zm5.55 0h3.26v1.43h.05c.45-.86 1.56-1.77 3.2-1.77 3.42 0 4.05 2.25 4.05 5.18v5.66h-3.4v-5c0-1.2 0-2.73-1.67-2.73s-1.92 1.3-1.92 2.64v5.09h-3.4z"/></svg></a>
           </div>
         </div>
-        <div><h4>Quick Links</h4><ul class="footer-links">
-          <li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div><h4>Products</h4><ul class="footer-links">
-          <li><a href="products.html#downlights">COB Downlights</a></li><li><a href="products.html#panels">LED Panels</a></li>
-          <li><a href="products.html#cob">Spot & Mini COB</a></li><li><a href="products.html#track">Track & Surface</a></li></ul></div>
-        <div><h4>Get in Touch</h4><ul class="foot-contact">
-          <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg> Bhilwadi – 416 303, Maharashtra, India</li>
-          <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z"/></svg> <a href="tel:+919860116122">+91 98601 16122</a></li>
-          <li><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L4 6v1l8 5 8-5V6l-8 5z"/></svg> <a href="mailto:solidstateindia@gmail.com">solidstateindia@gmail.com</a></li>
-        </ul></div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="assets/SOLID-LED-Catalogue.pdf" download>Downloads</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Our Products</h4>
+          <ul class="footer-links">
+            <li><a href="products.html#downlights">COB Downlights</a></li>
+            <li><a href="products.html#panels">LED Panel Lights</a></li>
+            <li><a href="products.html#track">LED Track Lights</a></li>
+            <li><a href="products.html#track">LED Surface Lights</a></li>
+            <li><a href="products.html">Other Indoor Lights</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <ul class="foot-contact">
+            <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg> 627, Bhilwadi – 416303, Maharashtra, India</li>
+            <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.2 2.2z"/></svg> <a href="tel:+919860116122">9860116122</a></li>
+            <li><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L4 6v1l8 5 8-5V6l-8 5z"/></svg> <a href="mailto:info@solidstate.co.in">info@solidstate.co.in</a></li>
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
-        <span>© <span data-year>2025</span> SOLID — Solid State Lights. All rights reserved.</span>
-        <span>Lighting Everything · Made in India 🇮🇳</span>
+        <span>© <span data-year>2024</span> Solid State Lights. All Rights Reserved.</span>
+        <span class="fb-links"><a href="#">Privacy Policy</a> | <a href="#">Terms &amp; Conditions</a></span>
       </div>
     </div>
   </footer>
 
-  <a class="wa-float" data-wa="Hi SOLID, I'm interested in your LED lighting products." aria-label="Chat on WhatsApp">
+  <a class="wa-float" data-wa="Hi SOLID, I'm interested in your LED indoor lighting products." aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1112 24a11.9 11.9 0 01-5.7-1.46L.06 24zM6.6 20.1l.37.22a9.9 9.9 0 005 1.37 9.9 9.9 0 10-9.9-9.9c0 1.8.48 3.5 1.4 5l.24.38-1 3.65 3.9-1.02z"/><path d="M9.1 7.2c-.2-.46-.4-.47-.6-.48h-.5a1 1 0 00-.72.34A3 3 0 006.3 9.4c0 1.3.95 2.57 1.08 2.75.13.18 1.84 2.95 4.56 4 .64.27 1.13.43 1.52.55.64.2 1.22.17 1.68.1.5-.07 1.58-.64 1.8-1.27.23-.62.23-1.16.16-1.27-.07-.1-.25-.17-.53-.3-.27-.14-1.58-.78-1.83-.87-.24-.09-.42-.13-.6.13-.18.27-.68.87-.83 1.05-.16.18-.3.2-.57.07-.27-.14-1.13-.42-2.16-1.33-.8-.71-1.34-1.6-1.5-1.86-.13-.27-.01-.42.12-.55.12-.12.27-.31.4-.47.14-.15.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.13-.6-1.48-.83-2.02z"/></svg>
   </a>
 
