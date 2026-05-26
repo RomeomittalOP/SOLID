@@ -5,8 +5,8 @@
 const SOLID = {
   // WhatsApp number in international format, no +, no spaces (91 = India)
   whatsapp: "919860116122",
-  phoneDisplay: "+91 98601 16122",
-  email: "solidstateindia@gmail.com",
+  phoneDisplay: "9860116122",
+  email: "info@solidstate.co.in",
 };
 
 /* Build a wa.me link with a prefilled message */
