@@ -97,21 +97,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const filters = document.querySelectorAll(".filter");
   const cards = document.querySelectorAll(".prod-card");
   if (filters.length) {
-    filters.forEach(f => f.addEventListener("click", () => {
-      filters.forEach(x => x.classList.remove("active"));
-      f.classList.add("active");
-      const cat = f.getAttribute("data-filter");
+    const applyFilter = (cat) => {
+      const btn = [...filters].find(f => f.getAttribute("data-filter") === cat) ||
+                  [...filters].find(f => f.getAttribute("data-filter") === "all");
+      filters.forEach(x => x.classList.toggle("active", x === btn));
+      const active = btn.getAttribute("data-filter");
       cards.forEach(c => {
-        const show = cat === "all" || c.getAttribute("data-cat") === cat;
+        const show = active === "all" || c.getAttribute("data-cat") === active;
         c.classList.toggle("hide", !show);
       });
-    }));
-    // Pre-select a filter from the URL hash (e.g. products.html#downlights)
-    const hash = (location.hash || "").replace("#", "");
-    if (hash) {
-      const target = [...filters].find(f => f.getAttribute("data-filter") === hash);
-      if (target) target.click();
-    }
+    };
+    filters.forEach(f => f.addEventListener("click", () => applyFilter(f.getAttribute("data-filter"))));
+
+    // Apply filter from URL hash — on first load AND whenever the hash changes
+    // (so clicking a Products-dropdown category while already on this page re-filters).
+    const fromHash = () => {
+      const h = (location.hash || "").replace("#", "");
+      if (h) applyFilter(h);
+    };
+    fromHash();
+    window.addEventListener("hashchange", () => {
+      fromHash();
+      const bar = document.querySelector(".filters");
+      if (bar) bar.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
   }
 
   /* ---- Lightbox (catalog page view) ---- */

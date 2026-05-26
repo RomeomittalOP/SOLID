@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://solidstate.co.in/sitemap.xml
