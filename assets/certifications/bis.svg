@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" role="img" aria-label="BIS Standard Mark">
+  <!-- Blue main triangle (rounded) -->
+  <path d="M120,18 C124,18 127,20 129,23 L196,144 C200,151 195,158 187,158 L53,158 C45,158 40,151 44,144 L111,23 C113,20 116,18 120,18 Z" fill="#1f4dab"/>
+  <!-- White inner triangle (cut-out) -->
+  <path d="M120,62 L162,142 L78,142 Z" fill="#ffffff"/>
+  <!-- Red dot -->
+  <circle cx="160" cy="118" r="13" fill="#dc2626"/>
+  <!-- Underline swoosh banner -->
+  <path d="M30,164 C90,180 150,180 210,164 L210,176 C150,192 90,192 30,176 Z" fill="#1f4dab"/>
+  <!-- Devanagari caption (system Devanagari font) -->
+  <text x="120" y="182" text-anchor="middle" font-family="'Noto Sans Devanagari','Mangal',Arial,sans-serif" font-size="11" font-weight="bold" fill="#dc2626">मानक : पथप्रदर्शकः</text>
+</svg>
