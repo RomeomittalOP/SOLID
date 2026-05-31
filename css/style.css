@@ -469,3 +469,27 @@ ul{list-style:none}
   img{max-width:100%;page-break-inside:avoid}
   h1,h2,h3{page-break-after:avoid}
 }
+
+/* ===== v=15 additions ===== */
+.email-fallback{margin:14px 0 0;font-size:14px;color:#4a5b70}
+.email-fallback a{color:#005AAA;text-decoration:underline;font-weight:600}
+.email-fallback--cta{color:#fff;margin:14px 0 0;width:100%;text-align:center}
+.email-fallback--cta a{color:#fff}
+.geo-strip{background:#eef4fb;padding:20px 0;text-align:center;font-size:15px;color:#0b2440}
+.geo-strip strong{color:#005AAA}
+.cat-page-hero{background:linear-gradient(135deg,#005AAA,#0b2440);color:#fff;padding:60px 0 40px}
+.cat-page-hero h1{color:#fff;font-size:38px;margin:0 0 10px}
+.cat-page-hero p{color:#cfe0f1;font-size:17px;max-width:720px;margin:0}
+.cat-page-hero .crumbs{color:#cfe0f1;margin-bottom:14px}
+.cat-page-hero .crumbs a{color:#fff}
+.cat-content{max-width:880px;margin:0 auto;line-height:1.75;color:#2c3a4f;font-size:16.5px}
+.cat-content h2{font-size:24px;margin:32px 0 12px;color:#0b2440}
+.cat-content h3{font-size:19px;margin:22px 0 10px;color:#0b2440}
+.cat-content ul{margin:0 0 16px 22px}
+.cat-content p{margin:0 0 14px}
+.cat-cta-box{background:#005AAA;color:#fff;padding:32px;border-radius:14px;text-align:center;margin:40px 0}
+.cat-cta-box h3{color:#fff;margin:0 0 8px;font-size:22px}
+.cat-cta-box p{color:#cfe0f1;margin:0 0 18px}
+.cat-cta-box .btn{background:#fff;color:#005AAA}
+.cat-cta-box .email-fallback{color:#cfe0f1;margin-top:12px}
+.cat-cta-box .email-fallback a{color:#fff}

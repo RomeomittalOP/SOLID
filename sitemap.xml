@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://solidstate.co.in/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://solidstate.co.in/products</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://solidstate.co.in/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://solidstate.co.in/products</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://solidstate.co.in/cob-downlights</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://solidstate.co.in/led-panel-lights</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://solidstate.co.in/led-track-lights</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://solidstate.co.in/led-batten-lights</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://solidstate.co.in/led-bulbs</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://solidstate.co.in/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://solidstate.co.in/blog/how-to-choose-led-indoor-lighting-india</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://solidstate.co.in/blog/20-years-led-lighting-expertise-india</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
