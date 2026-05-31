@@ -1,0 +1,14 @@
+{
+  "name": "SOLID — Solid State Lights",
+  "short_name": "SOLID",
+  "description": "LED indoor lighting manufacturer in India since 2004.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#005AAA",
+  "icons": [
+    { "src": "/assets/favicon.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/favicon.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
