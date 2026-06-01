@@ -1,6 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/led-bulbs", "destination": "/cob-downlights", "permanent": true },
+    { "source": "/led-batten-lights", "destination": "/surface-cylinder-lights", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

@@ -493,3 +493,12 @@ ul{list-style:none}
 .cat-cta-box .btn{background:#fff;color:#005AAA}
 .cat-cta-box .email-fallback{color:#cfe0f1;margin-top:12px}
 .cat-cta-box .email-fallback a{color:#fff}
+
+/* ===== v=17 additions ===== */
+/* Project CTA actions column — keeps email visible under the button */
+.pc-actions{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.pc-actions .email-fallback--cta{margin:0}
+@media(max-width:760px){
+  .pc-actions{align-items:stretch;width:100%}
+  .pc-actions .email-fallback--cta{text-align:center}
+}
