@@ -473,8 +473,10 @@ ul{list-style:none}
 /* ===== v=15 additions ===== */
 .email-fallback{margin:14px 0 0;font-size:14px;color:#4a5b70}
 .email-fallback a{color:#005AAA;text-decoration:underline;font-weight:600}
-.email-fallback--cta{color:#fff;margin:14px 0 0;width:100%;text-align:center}
-.email-fallback--cta a{color:#fff}
+.email-fallback--cta{color:#4a5b70;margin:14px 0 0;width:100%;text-align:center;font-size:14px}
+.email-fallback--cta a{color:#005AAA;text-decoration:underline;font-weight:600}
+/* Make .why grid single-column after Industries-We-Serve removal */
+.why-grid{grid-template-columns:1fr !important}
 .geo-strip{background:#eef4fb;padding:20px 0;text-align:center;font-size:15px;color:#0b2440}
 .geo-strip strong{color:#005AAA}
 .cat-page-hero{background:linear-gradient(135deg,#005AAA,#0b2440);color:#fff;padding:60px 0 40px}
