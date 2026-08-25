@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /server/
+Disallow: /admin/
 
 Sitemap: https://solidstate.co.in/sitemap.xml
+Sitemap: https://solidstate.co.in/sitemap-images.xml

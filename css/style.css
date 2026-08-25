@@ -505,6 +505,18 @@ ul{list-style:none}
   .pc-actions .email-fallback--cta{text-align:center}
 }
 
+/* ===== v=21 additions — testimonial section ===== */
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:24px}
+.testimonial-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px;box-shadow:var(--shadow-sm);position:relative;display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.testimonial-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.testimonial-card .tc-stars{color:#f5c518;font-size:1.05rem;letter-spacing:2px;margin-bottom:10px}
+.testimonial-card p{color:var(--ink);font-size:.98rem;line-height:1.6;margin:0 0 16px;flex:1;font-style:italic;position:relative;padding-left:6px}
+.testimonial-card p::before{content:'"';position:absolute;left:-6px;top:-8px;font-size:2.4rem;color:var(--blue);opacity:.25;font-family:Georgia,serif;line-height:1}
+.testimonial-card cite{font-style:normal;display:block;padding-top:14px;border-top:1px solid var(--line);font-size:.85rem}
+.testimonial-card cite b{display:block;color:var(--navy);font-weight:700;font-size:.92rem;margin-bottom:2px}
+.testimonial-card cite span{color:var(--muted);font-size:.82rem}
+@media (max-width:960px){.testimonial-grid{grid-template-columns:1fr;gap:16px}}
+
 /* ===== v=18 additions — SEO overhaul ===== */
 /* Hero tagline (kept above lead) */
 .hero-copy .tagline{font-family:var(--font-head);font-weight:600;color:var(--blue);font-size:1.05rem;margin:6px 0 12px;letter-spacing:.2px}
