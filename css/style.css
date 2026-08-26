@@ -517,6 +517,17 @@ ul{list-style:none}
 .testimonial-card cite span{color:var(--muted);font-size:.82rem}
 @media (max-width:960px){.testimonial-grid{grid-template-columns:1fr;gap:16px}}
 
+/* ===== Brand Showcase (posters + videos) ===== */
+.showcase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px}
+.showcase-grid img{width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s var(--ease);cursor:pointer}
+.showcase-grid img:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+@media (max-width:960px){.showcase-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.showcase-grid{grid-template-columns:1fr}}
+
+.showcase-videos{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
+.showcase-videos video{width:100%;border-radius:14px;box-shadow:var(--shadow);background:#0A1B2E;aspect-ratio:9/16;max-height:520px;object-fit:cover}
+@media (max-width:760px){.showcase-videos{grid-template-columns:1fr}.showcase-videos video{max-height:440px}}
+
 /* ===== v=18 additions — SEO overhaul ===== */
 /* Hero tagline (kept above lead) */
 .hero-copy .tagline{font-family:var(--font-head);font-weight:600;color:var(--blue);font-size:1.05rem;margin:6px 0 12px;letter-spacing:.2px}
