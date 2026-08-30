@@ -157,6 +157,45 @@
     </div>
   </div>
 
+  <!-- ===== Cinematic Hero Video ===== -->
+  <section class="cinema-section reveal">
+    <div class="cinema-wrap">
+      <video id="cinemaVideo" class="cinema-video" autoplay muted loop playsinline preload="auto">
+        <source src="assets/gallery/solid-part1.mp4?v=23" type="video/mp4" />
+      </video>
+      <div class="cinema-caption">
+        <span class="kicker" style="color:#fff">Lighting Everything</span>
+        <h2 style="color:#fff">Watch a Space Come Alive</h2>
+      </div>
+    </div>
+  </section>
+  <script>
+    (function(){
+      var v = document.getElementById('cinemaVideo');
+      if (!v) return;
+      var part1 = 'assets/gallery/solid-part1.mp4?v=23';
+      var part2 = 'assets/gallery/solid-part2.mp4?v=23';
+      var onPart1End = function(){
+        v.removeEventListener('ended', onPart1End);
+        v.loop = false;
+        v.src = part2;
+        v.addEventListener('ended', onPart2End);
+        v.load();
+        v.play().catch(function(){});
+      };
+      var onPart2End = function(){
+        v.removeEventListener('ended', onPart2End);
+        v.src = part1;
+        v.loop = false;
+        v.addEventListener('ended', onPart1End);
+        v.load();
+        v.play().catch(function(){});
+      };
+      v.loop = false;
+      v.addEventListener('ended', onPart1End);
+    })();
+  </script>
+
   <!-- ===== About ===== -->
   <section class="section">
     <div class="container about-grid">

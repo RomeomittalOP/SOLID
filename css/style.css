@@ -517,6 +517,14 @@ ul{list-style:none}
 .testimonial-card cite span{color:var(--muted);font-size:.82rem}
 @media (max-width:960px){.testimonial-grid{grid-template-columns:1fr;gap:16px}}
 
+/* ===== Cinematic Hero Video ===== */
+.cinema-section{position:relative;width:100%;overflow:hidden;background:#0A1B2E}
+.cinema-wrap{position:relative;width:100%;max-height:640px;min-height:340px;aspect-ratio:16/9;overflow:hidden}
+.cinema-video{width:100%;height:100%;object-fit:cover;display:block}
+.cinema-caption{position:absolute;left:0;bottom:0;padding:32px 5vw;background:linear-gradient(0deg,rgba(10,27,46,.75) 0%,rgba(10,27,46,0) 100%);width:100%}
+.cinema-caption h2{font-size:clamp(1.4rem,3.5vw,2.4rem);margin-top:6px}
+@media (max-width:760px){.cinema-wrap{aspect-ratio:9/16;max-height:640px}.cinema-caption{padding:20px 24px}}
+
 /* ===== Brand Showcase (posters + videos) ===== */
 .showcase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px}
 .showcase-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;border-radius:12px;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s var(--ease);cursor:pointer;display:block}
