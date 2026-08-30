@@ -2,6 +2,15 @@
    SOLID — main.js
    One place to change the WhatsApp number for the whole site.
 ============================================================ */
+
+/* ---- Always load at the top on refresh/reload ----
+   Runs immediately (not inside DOMContentLoaded) so it takes effect
+   before the browser tries to restore the old scroll position. */
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+window.scrollTo(0, 0);
+
 const SOLID = {
   // WhatsApp number in international format, no +, no spaces (91 = India)
   whatsapp: "919860116122",
@@ -189,6 +198,42 @@ document.addEventListener("DOMContentLoaded", () => {
       window.open(waLink(lines.join("\n")), "_blank", "noopener");
     });
   });
+
+  /* ---- Mouse parallax (hero visual + feature strip) ---- */
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  if (!prefersReducedMotion && !isTouch) {
+    const parallaxTargets = [
+      { el: document.querySelector(".hero-visual img"), strength: 14 },
+      { el: document.querySelector(".hero-copy h1"), strength: 6 },
+      { el: document.querySelector(".cinema-video"), strength: 10 },
+    ].filter((t) => t.el);
+
+    if (parallaxTargets.length) {
+      parallaxTargets.forEach((t) => {
+        t.el.style.willChange = "transform";
+        t.el.style.transition = "transform .25s ease-out";
+      });
+      let raf = null;
+      const onMove = (e) => {
+        const cx = window.innerWidth / 2;
+        const cy = window.innerHeight / 2;
+        const dx = (e.clientX - cx) / cx; // -1 .. 1
+        const dy = (e.clientY - cy) / cy; // -1 .. 1
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          parallaxTargets.forEach(({ el, strength }) => {
+            el.style.transform = `translate3d(${dx * strength}px, ${dy * strength * 0.6}px, 0)`;
+          });
+        });
+      };
+      const onLeave = () => {
+        parallaxTargets.forEach(({ el }) => { el.style.transform = "translate3d(0,0,0)"; });
+      };
+      window.addEventListener("mousemove", onMove, { passive: true });
+      document.addEventListener("mouseleave", onLeave);
+    }
+  }
 
   /* ---- Contact form -> WhatsApp ---- */
   const form = document.querySelector("#contactForm");
