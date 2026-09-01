@@ -18,6 +18,47 @@ const SOLID = {
   email: "solidstateindia@gmail.com",
 };
 
+/* ---- Cinematic LED light-up intro ----
+   Rapid strobe of LED colours, then the SOLID logo glows into view
+   inside a spotlight, then the site fades in. Plays once per browser
+   tab session (not on every internal page click) and is skipped
+   entirely for reduced-motion users. Runs immediately (script sits at
+   the end of <body>) so it covers the page before paint settles. */
+(function () {
+  let alreadySeen = false;
+  try {
+    alreadySeen = sessionStorage.getItem("sld_intro_seen") === "1";
+    sessionStorage.setItem("sld_intro_seen", "1");
+  } catch (e) {
+    /* sessionStorage unavailable — just play the intro once, unpersisted */
+  }
+  if (alreadySeen) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const run = () => {
+    const overlay = document.createElement("div");
+    overlay.className = "sld-intro";
+    overlay.innerHTML = `
+      <div class="sld-intro-glow"></div>
+      <img class="sld-intro-logo" src="/assets/logo.webp?v=25" alt="SOLID" />
+    `;
+    document.body.appendChild(overlay);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    setTimeout(() => {
+      overlay.classList.add("sld-intro--out");
+      setTimeout(() => {
+        overlay.remove();
+        document.body.style.overflow = prevOverflow;
+      }, 550);
+    }, 2500);
+  };
+
+  if (document.body) run();
+  else document.addEventListener("DOMContentLoaded", run);
+})();
+
 /* Build a wa.me link with a prefilled message */
 function waLink(message) {
   const text = encodeURIComponent(message || "Hi SOLID, I'm interested in your LED lighting products.");
