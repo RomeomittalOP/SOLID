@@ -51,8 +51,8 @@ const SOLID = {
       setTimeout(() => {
         overlay.remove();
         document.body.style.overflow = prevOverflow;
-      }, 550);
-    }, 2500);
+      }, 700);
+    }, 1900);
   };
 
   if (document.body) run();
@@ -274,73 +274,6 @@ document.addEventListener("DOMContentLoaded", () => {
       window.addEventListener("mousemove", onMove, { passive: true });
       document.addEventListener("mouseleave", onLeave);
     }
-  }
-
-  /* ---- Light sweep (scroll-driven coloured LED glow) ----
-     Simulates the site being lit by shifting LED colour temperatures
-     (warm white -> natural white -> cool white -> brand blue) as the
-     user scrolls. Pure CSS gradients + rAF, no WebGL/3D library, so it
-     stays light on all 52 pages. Disabled for reduced-motion users. */
-  if (!prefersReducedMotion) {
-    const layer = document.createElement("div");
-    layer.className = "light-fx-layer";
-    layer.innerHTML = `
-      <div class="light-orb orb-a"></div>
-      <div class="light-orb orb-b"></div>
-      <div class="light-orb orb-c"></div>
-    `;
-    document.body.prepend(layer);
-
-    const orbA = layer.querySelector(".orb-a");
-    const orbB = layer.querySelector(".orb-b");
-    const orbC = layer.querySelector(".orb-c");
-
-    // LED colour stops: warm white -> natural white -> cool white -> brand blue -> warm white
-    const stops = ["#ffb066", "#fff2d6", "#cfe9ff", "#4da2ff", "#ffb066"];
-    const lerp = (a, b, t) => a + (b - a) * t;
-    const hexToRgb = (h) => {
-      const n = parseInt(h.slice(1), 16);
-      return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
-    };
-    const rgbToCss = (r, g, b) => `rgb(${r | 0},${g | 0},${b | 0})`;
-    const colourAt = (t) => {
-      const scaled = t * (stops.length - 1);
-      const i = Math.min(stops.length - 2, Math.floor(scaled));
-      const localT = scaled - i;
-      const [r1, g1, b1] = hexToRgb(stops[i]);
-      const [r2, g2, b2] = hexToRgb(stops[i + 1]);
-      return rgbToCss(lerp(r1, r2, localT), lerp(g1, g2, localT), lerp(b1, b2, localT));
-    };
-
-    let ticking = false;
-    const update = () => {
-      ticking = false;
-      const doc = document.documentElement;
-      const max = doc.scrollHeight - doc.clientHeight;
-      const progress = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
-
-      const c1 = colourAt(progress);
-      const c2 = colourAt((progress + 0.28) % 1);
-      const c3 = colourAt((progress + 0.6) % 1);
-
-      orbA.style.background = `radial-gradient(circle, ${c1} 0%, transparent 70%)`;
-      orbA.style.transform = `translate3d(${-10 + progress * 30}vw, ${-10 + progress * 40}vh, 0)`;
-
-      orbB.style.background = `radial-gradient(circle, ${c2} 0%, transparent 70%)`;
-      orbB.style.transform = `translate3d(${70 - progress * 40}vw, ${20 + progress * 30}vh, 0)`;
-
-      orbC.style.background = `radial-gradient(circle, ${c3} 0%, transparent 70%)`;
-      orbC.style.transform = `translate3d(${30 + progress * 25}vw, ${60 - progress * 35}vh, 0)`;
-    };
-    const onScroll = () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(update);
-      }
-    };
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll, { passive: true });
   }
 
   /* ---- Contact form -> WhatsApp ---- */

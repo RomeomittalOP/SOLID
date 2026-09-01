@@ -517,37 +517,21 @@ ul{list-style:none}
 .testimonial-card cite span{color:var(--muted);font-size:.82rem}
 @media (max-width:960px){.testimonial-grid{grid-template-columns:1fr;gap:16px}}
 
-/* ===== Cinematic LED Light-Up Intro (once per session) ===== */
+/* ===== Cinematic LED Light-Up Intro (once per session) =====
+   Calm, single smooth build — no strobing. A soft glow blooms in,
+   the logo eases into it, then the site fades in. */
 .sld-intro{position:fixed;inset:0;z-index:9999;background:#0B1F3A;display:flex;align-items:center;justify-content:center;
-  overflow:hidden;animation:sldFlash 1.1s steps(1,end) 1 both;transition:opacity .5s ease}
+  overflow:hidden;transition:opacity .7s ease}
 .sld-intro--out{opacity:0;pointer-events:none}
-.sld-intro-glow{position:absolute;width:60vmax;height:60vmax;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,255,255,.9) 0%,rgba(77,162,255,.35) 35%,transparent 70%);
-  opacity:0;transform:scale(.3);animation:sldGlow 1s ease-out 1.1s 1 both}
-.sld-intro-logo{position:relative;width:min(46vw,220px);opacity:0;transform:scale(.55);
-  filter:drop-shadow(0 0 30px rgba(255,255,255,.65));
-  animation:sldLogoIn .6s cubic-bezier(.2,.8,.2,1) 1.25s 1 both}
-@keyframes sldFlash{
-  0%{background:#0B1F3A}9%{background:#fff8e1}18%{background:#ffb066}27%{background:#0B1F3A}
-  36%{background:#cfe9ff}45%{background:#0B1F3A}55%{background:#4da2ff}64%{background:#0B1F3A}
-  73%{background:#fff2d6}82%{background:#0B1F3A}100%{background:#0B1F3A}
-}
-@keyframes sldGlow{0%{opacity:0;transform:scale(.3)}60%{opacity:1;transform:scale(1)}100%{opacity:.85;transform:scale(1.05)}}
-@keyframes sldLogoIn{0%{opacity:0;transform:scale(.55)}100%{opacity:1;transform:scale(1)}}
-@media (max-width:600px){.sld-intro-logo{width:56vw}}
-
-/* ===== Light Sweep (scroll-driven LED colour glow) =====
-   Sits ABOVE all page content as a soft colour-wash so shifting LED
-   tones (warm -> natural -> cool -> brand blue) are visible even over
-   solid-background sections, without ever blocking clicks/text. */
-.light-fx-layer{position:fixed;inset:0;z-index:80;overflow:hidden;pointer-events:none;mix-blend-mode:soft-light}
-.light-orb{position:absolute;width:52vw;height:52vw;max-width:640px;max-height:640px;border-radius:50%;
-  filter:blur(70px);opacity:.55;will-change:transform,background;transition:background .6s linear}
-.orb-a{top:-10vh;left:-10vw}
-.orb-b{top:10vh;left:60vw}
-.orb-c{top:55vh;left:20vw}
-@media (max-width:760px){.light-orb{opacity:.4;filter:blur(50px)}}
-@media (prefers-color-scheme:dark){.light-fx-layer{mix-blend-mode:screen}.light-orb{opacity:.22}}
+.sld-intro-glow{position:absolute;width:52vmax;height:52vmax;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.4) 0%,rgba(77,162,255,.18) 42%,transparent 72%);
+  opacity:0;transform:scale(.5);animation:sldGlow 1.6s ease-out .1s 1 both}
+.sld-intro-logo{position:relative;width:min(36vw,160px);opacity:0;transform:scale(.8);
+  filter:drop-shadow(0 0 16px rgba(255,255,255,.35));
+  animation:sldLogoIn 1s cubic-bezier(.2,.8,.2,1) .5s 1 both}
+@keyframes sldGlow{0%{opacity:0;transform:scale(.5)}100%{opacity:.75;transform:scale(1)}}
+@keyframes sldLogoIn{0%{opacity:0;transform:scale(.8)}100%{opacity:1;transform:scale(1)}}
+@media (max-width:600px){.sld-intro-logo{width:48vw}}
 
 /* ===== Enquiry Cart ===== */
 .cart-float{position:fixed;left:24px;bottom:24px;z-index:998;width:54px;height:54px;border-radius:50%;
