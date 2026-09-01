@@ -610,6 +610,7 @@ ul{list-style:none}
 .cart-item-info{flex:1;min-width:0}
 .cart-item-name{font-family:var(--font-head);font-weight:600;font-size:.92rem;color:var(--navy);line-height:1.3}
 .cart-item-model{font-size:.78rem;color:var(--muted);margin-top:2px}
+.cart-item-variant{font-size:.76rem;color:var(--blue);margin-top:2px;font-weight:600}
 .cart-item-qty{display:flex;align-items:center;gap:10px;margin-top:8px}
 .qty-btn{width:24px;height:24px;border-radius:6px;border:1px solid var(--line);background:var(--card-bg);color:var(--blue);
   font-size:1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
@@ -628,6 +629,8 @@ ul{list-style:none}
 
 /* Add-to-Cart button (product pages) */
 .btn-cart{background:var(--card-bg);color:var(--blue);border:2px solid var(--blue)}
+.btn[disabled],.btn.disabled{opacity:.45;cursor:not-allowed;pointer-events:none}
+.btn[disabled]:hover,.btn.disabled:hover{transform:none}
 .btn-cart:hover{background:var(--blue-soft)}
 
 /* ===== Cinematic Hero Video ===== */

@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".prod-card").forEach((card) => {
     const optWrap = card.querySelector(".prod-options");
     const btn = card.querySelector(".prod-enquire");
+    const cartBtn = card.querySelector(".btn-cart");
     if (!optWrap || !btn) return;
 
     const name = (card.querySelector("h3")?.textContent || "Product").trim();
@@ -219,7 +220,24 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>`)
       .join("");
 
-    const refresh = () => { btn.disabled = !groups.every((g) => selection[g.key]); };
+    // Builds a stable "12W / Warm White / Round" style string from the
+    // current selection so cart.js can tell different variants of the
+    // SAME product apart and keep them as separate cart line items.
+    const variantString = () =>
+      ["Wattage", "Colour", "Variant", "Length"]
+        .map((k) => selection[k])
+        .filter(Boolean)
+        .join(" / ");
+
+    const refresh = () => {
+      const complete = groups.every((g) => selection[g.key]);
+      btn.disabled = !complete;
+      if (cartBtn) {
+        cartBtn.disabled = !complete;
+        cartBtn.classList.toggle("disabled", !complete);
+        if (complete) cartBtn.setAttribute("data-variant", variantString());
+      }
+    };
     refresh();
 
     optWrap.addEventListener("click", (e) => {

@@ -180,6 +180,7 @@
         <div class="cart-item-info">
           <div class="cart-item-name">${escapeHtml(item.name)}</div>
           ${item.model ? `<div class="cart-item-model">Model: ${escapeHtml(item.model)}</div>` : ""}
+          ${item.variant ? `<div class="cart-item-variant">${escapeHtml(item.variant)}</div>` : ""}
           <div class="cart-item-qty">
             <button type="button" class="qty-btn" data-i="${i}" data-d="-1">&minus;</button>
             <span>${item.qty}</span>
