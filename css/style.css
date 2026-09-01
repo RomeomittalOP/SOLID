@@ -517,6 +517,19 @@ ul{list-style:none}
 .testimonial-card cite span{color:var(--muted);font-size:.82rem}
 @media (max-width:960px){.testimonial-grid{grid-template-columns:1fr;gap:16px}}
 
+/* ===== Light Sweep (scroll-driven LED colour glow) =====
+   Sits ABOVE all page content as a soft colour-wash so shifting LED
+   tones (warm -> natural -> cool -> brand blue) are visible even over
+   solid-background sections, without ever blocking clicks/text. */
+.light-fx-layer{position:fixed;inset:0;z-index:80;overflow:hidden;pointer-events:none;mix-blend-mode:soft-light}
+.light-orb{position:absolute;width:52vw;height:52vw;max-width:640px;max-height:640px;border-radius:50%;
+  filter:blur(70px);opacity:.55;will-change:transform,background;transition:background .6s linear}
+.orb-a{top:-10vh;left:-10vw}
+.orb-b{top:10vh;left:60vw}
+.orb-c{top:55vh;left:20vw}
+@media (max-width:760px){.light-orb{opacity:.4;filter:blur(50px)}}
+@media (prefers-color-scheme:dark){.light-fx-layer{mix-blend-mode:screen}.light-orb{opacity:.22}}
+
 /* ===== Enquiry Cart ===== */
 .cart-float{position:fixed;left:24px;bottom:24px;z-index:998;width:54px;height:54px;border-radius:50%;
   background:var(--blue);color:#fff;border:none;box-shadow:0 8px 24px rgba(0,90,170,.35);
