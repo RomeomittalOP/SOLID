@@ -276,6 +276,65 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  /* ---- LED spectrum scroll strip ----
+     A thin glowing bar pinned to the very top of the viewport that
+     fills left-to-right with scroll progress, showing a shimmering
+     spectrum across every LED colour temperature SOLID sells (warm ->
+     natural -> cool -> blue -> violet accent). Always-bright, never
+     dims the page — purely a colourful progress indicator. */
+  if (!prefersReducedMotion) {
+    const strip = document.createElement("div");
+    strip.className = "sld-scroll-strip";
+    document.body.prepend(strip);
+
+    let ticking = false;
+    const updateStrip = () => {
+      ticking = false;
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - doc.clientHeight;
+      const pct = max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+      strip.style.width = pct + "%";
+    };
+    const onStripScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateStrip);
+      }
+    };
+    updateStrip();
+    window.addEventListener("scroll", onStripScroll, { passive: true });
+    window.addEventListener("resize", onStripScroll, { passive: true });
+  }
+
+  /* ---- Light-up reveal (elements "power on" as they scroll into view) ----
+     Product cards, feature blocks and key images each get a quick,
+     colourful glow-pulse the first time they enter the viewport —
+     like a light fixture switching on — then settle back to normal.
+     The page itself never dims; this is purely additive sparkle. */
+  if (!prefersReducedMotion) {
+    const glowColours = ["#ffb066", "#fff2d6", "#cfe9ff", "#4da2ff", "#8a7bff"];
+    const revealTargets = document.querySelectorAll(
+      ".prod-card, .feature-card, .cat-card, .testimonial-card, .blog-card, .cinema-video, .hero-visual img"
+    );
+    if (revealTargets.length && "IntersectionObserver" in window) {
+      let i = 0;
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            el.style.setProperty("--sld-glow", glowColours[i % glowColours.length]);
+            i++;
+            el.classList.add("sld-light-reveal", "is-lit");
+            io.unobserve(el);
+          });
+        },
+        { threshold: 0.25 }
+      );
+      revealTargets.forEach((el) => io.observe(el));
+    }
+  }
+
 
   /* ---- Contact form -> WhatsApp ---- */
   const form = document.querySelector("#contactForm");

@@ -517,6 +517,22 @@ ul{list-style:none}
 .testimonial-card cite span{color:var(--muted);font-size:.82rem}
 @media (max-width:960px){.testimonial-grid{grid-template-columns:1fr;gap:16px}}
 
+/* ===== LED Spectrum Scroll Strip ===== */
+.sld-scroll-strip{position:fixed;top:0;left:0;height:4px;width:0%;z-index:9998;pointer-events:none;
+  background:linear-gradient(90deg,#ffb066,#fff2d6,#cfe9ff,#4da2ff,#8a7bff,#ffb066);
+  background-size:300% 100%;box-shadow:0 0 12px rgba(120,170,255,.55);
+  transition:width .08s linear;animation:sldStripShimmer 6s linear infinite}
+@keyframes sldStripShimmer{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+
+/* ===== Light-Up Reveal (elements power on as they scroll into view) ===== */
+.sld-light-reveal{--sld-glow:#4da2ff}
+.sld-light-reveal.is-lit{animation:sldPowerOn 1s ease-out}
+@keyframes sldPowerOn{
+  0%{box-shadow:0 0 0 0 rgba(0,0,0,0)}
+  35%{box-shadow:0 0 46px 8px var(--sld-glow)}
+  100%{box-shadow:0 0 0 0 rgba(0,0,0,0)}
+}
+
 /* ===== Cinematic LED Light-Up Intro (once per session) =====
    Calm, single smooth build — no strobing. A soft glow blooms in,
    the logo eases into it, then the site fades in. */
