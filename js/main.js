@@ -276,6 +276,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  /* ---- Scroll spotlight (COB downlight reveals the page) ----
+     The page sits dim/dark by default. A COB downlight fixture is
+     fixed near the top of the viewport and throws a soft cone of
+     light straight down — only what falls inside that beam reads
+     clearly; everything else stays shadowed. Scrolling moves new
+     content up into the beam, so the "light" appears to travel down
+     the page as you scroll. The sticky header sits above this layer
+     with its own solid background, so nav/branding is never dimmed. */
+  if (!prefersReducedMotion && !isTouch) {
+    const scrim = document.createElement("div");
+    scrim.className = "cob-scrim";
+    document.body.prepend(scrim);
+
+    const fixture = document.createElement("div");
+    fixture.className = "cob-fixture";
+    fixture.innerHTML = `
+      <div class="cob-beam"></div>
+      <svg viewBox="0 0 64 64" class="cob-fixture-icon" aria-hidden="true">
+        <circle cx="32" cy="14" r="12" fill="#e9edf3" stroke="#0B1F3A" stroke-width="2"/>
+        <circle cx="32" cy="14" r="6" fill="#fff6df"/>
+      </svg>
+    `;
+    document.body.prepend(fixture);
+  }
+
   /* ---- Contact form -> WhatsApp ---- */
   const form = document.querySelector("#contactForm");
   if (form) {

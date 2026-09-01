@@ -517,6 +517,30 @@ ul{list-style:none}
 .testimonial-card cite span{color:var(--muted);font-size:.82rem}
 @media (max-width:960px){.testimonial-grid{grid-template-columns:1fr;gap:16px}}
 
+/* ===== Scroll Spotlight (COB downlight reveals the page) =====
+   Fixed dark scrim over the whole viewport with a soft circular hole
+   punched near the top-centre, where a COB downlight fixture "hangs"
+   and throws its beam down. The sticky header (z-index 100, opaque)
+   always draws above this, so it's never affected. */
+.cob-scrim{position:fixed;inset:0;z-index:85;pointer-events:none;background:rgba(6,14,26,.82);
+  -webkit-mask-image:radial-gradient(ellipse 340px 420px at 50% 30%,transparent 0,transparent 40%,rgba(0,0,0,.55) 65%,#000 90%);
+  mask-image:radial-gradient(ellipse 340px 420px at 50% 30%,transparent 0,transparent 40%,rgba(0,0,0,.55) 65%,#000 90%)}
+.cob-fixture{position:fixed;left:50%;top:78px;transform:translateX(-50%);z-index:86;pointer-events:none}
+.cob-fixture-icon{position:relative;width:44px;height:44px;display:block;margin:0 auto;
+  filter:drop-shadow(0 0 16px rgba(255,246,223,.9))}
+.cob-beam{position:absolute;left:50%;top:22px;transform:translateX(-50%);z-index:-1;
+  width:420px;height:520px;border-radius:50%;
+  background:radial-gradient(ellipse at top,rgba(255,246,223,.5) 0%,rgba(255,246,223,.14) 45%,transparent 72%);
+  filter:blur(4px);animation:cobBeamPulse 3s ease-in-out infinite}
+@keyframes cobBeamPulse{0%,100%{opacity:.85}50%{opacity:1}}
+@media (max-width:760px){
+  .cob-scrim{-webkit-mask-image:radial-gradient(ellipse 220px 300px at 50% 26%,transparent 0,transparent 38%,rgba(0,0,0,.55) 65%,#000 90%);
+    mask-image:radial-gradient(ellipse 220px 300px at 50% 26%,transparent 0,transparent 38%,rgba(0,0,0,.55) 65%,#000 90%)}
+  .cob-fixture{top:64px}
+  .cob-fixture-icon{width:34px;height:34px}
+  .cob-beam{width:260px;height:340px}
+}
+
 /* ===== Cinematic LED Light-Up Intro (once per session) =====
    Calm, single smooth build — no strobing. A soft glow blooms in,
    the logo eases into it, then the site fades in. */
