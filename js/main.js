@@ -276,6 +276,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  /* ---- Ambient corner lights (dark theme) ----
+     Several soft, differently-coloured LED glows float in fixed at
+     the corners/edges of the viewport — like multiple fixtures
+     lighting the (now dark) site from every direction. Pure CSS
+     animation once injected, no scroll/mouse math needed. */
+  if (!prefersReducedMotion) {
+    const ambient = document.createElement("div");
+    ambient.className = "sld-ambient-lights";
+    ambient.innerHTML = `
+      <div class="sld-amb sld-amb-1"></div>
+      <div class="sld-amb sld-amb-2"></div>
+      <div class="sld-amb sld-amb-3"></div>
+      <div class="sld-amb sld-amb-4"></div>
+      <div class="sld-amb sld-amb-5"></div>
+    `;
+    document.body.prepend(ambient);
+  }
+
   /* ---- LED spectrum scroll strip ----
      A thin glowing bar pinned to the very top of the viewport that
      fills left-to-right with scroll progress, showing a shimmering
