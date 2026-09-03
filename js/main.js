@@ -258,6 +258,60 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* ---- Product selection on individual product pages ----
+     Same wattage/colour/variant/length chip picker as the catalogue
+     page, but scoped to a single product's hero section. Only gates
+     the Add to Cart button (the page's own "Get a Quote" button
+     already has its own working WhatsApp link, so it's left alone
+     here to avoid double-binding a click handler on it). */
+  document.querySelectorAll(".prod-hero-grid[data-watt], .prod-hero-grid[data-variant], .prod-hero-grid[data-length]").forEach((wrap) => {
+    const optWrap = wrap.querySelector(".prod-options");
+    const cartBtn = wrap.querySelector(".btn-cart");
+    if (!optWrap || !cartBtn) return;
+
+    const split = (a) => (a ? a.split(",").map((s) => s.trim()).filter(Boolean) : []);
+    const groups = [];
+    const watt = split(wrap.getAttribute("data-watt"));
+    if (watt.length) groups.push({ key: "Wattage", label: "Wattage", options: watt });
+    if (!wrap.hasAttribute("data-notemp")) groups.push({ key: "Colour", label: "Colour Temperature", options: COLOUR_TEMPS });
+    const variant = split(wrap.getAttribute("data-variant"));
+    if (variant.length) groups.push({ key: "Variant", label: "Variant / Finish", options: variant });
+    const length = split(wrap.getAttribute("data-length"));
+    if (length.length) groups.push({ key: "Length", label: "Length", options: length });
+    if (!groups.length) return;
+
+    const selection = {};
+    const escAttr = (s) => String(s).replace(/"/g, "&quot;");
+    optWrap.innerHTML = groups
+      .map((g) => `
+      <div class="opt-group">
+        <span class="opt-label">${g.label}</span>
+        <div class="opt-chips">
+          ${g.options.map((o) => `<button type="button" class="opt-chip" data-key="${g.key}" data-val="${escAttr(o)}">${o}</button>`).join("")}
+        </div>
+      </div>`)
+      .join("");
+
+    const variantString = () =>
+      ["Wattage", "Colour", "Variant", "Length"].map((k) => selection[k]).filter(Boolean).join(" / ");
+
+    const refresh = () => {
+      const complete = groups.every((g) => selection[g.key]);
+      cartBtn.disabled = !complete;
+      cartBtn.classList.toggle("disabled", !complete);
+      if (complete) cartBtn.setAttribute("data-variant", variantString());
+    };
+    refresh();
+
+    optWrap.addEventListener("click", (e) => {
+      const chip = e.target.closest(".opt-chip");
+      if (!chip) return;
+      selection[chip.getAttribute("data-key")] = chip.getAttribute("data-val");
+      chip.parentElement.querySelectorAll(".opt-chip").forEach((c) => c.classList.toggle("sel", c === chip));
+      refresh();
+    });
+  });
+
   /* ---- Mouse parallax (hero visual + feature strip) ---- */
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;

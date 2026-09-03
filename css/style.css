@@ -249,6 +249,7 @@ ul{list-style:none}
 
 /* Product selection options */
 .prod-options{display:flex;flex-direction:column;gap:12px;margin:2px 0 0}
+.prod-hero-grid .prod-options:not(:empty){margin-bottom:16px}
 .opt-group{display:flex;flex-direction:column;gap:7px}
 .opt-label{font-family:var(--font-head);font-weight:600;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
 .opt-chips{display:flex;flex-wrap:wrap;gap:7px}
